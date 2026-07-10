@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { MAX_NEW_WORDS_PER_DAY } from '../config/session'
 import { SAVE_VERSION } from '../config/storage'
 import { GRADUATED, type Box, type WordProgress } from '../types/progress'
 import type { SaveData } from '../types/save'
@@ -35,7 +36,7 @@ export const saveFileV1Schema = z.object({
     }),
   }),
   settings: z.object({
-    newWordsPerDay: z.number().int().min(1).max(200),
+    newWordsPerDay: z.number().int().min(1).max(MAX_NEW_WORDS_PER_DAY),
     ttsEnabled: z.boolean(),
     sfxEnabled: z.boolean(),
   }),
@@ -110,7 +111,10 @@ export function deserializeSave(file: SaveFileV1): SaveData {
     player: file.player,
     settings: file.settings,
     wordProgress: Object.fromEntries(
-      Object.entries(file.wordProgress).map(([wordId, tuple]) => [wordId, fromTuple(wordId, tuple)]),
+      Object.entries(file.wordProgress).map(([wordId, tuple]) => [
+        wordId,
+        fromTuple(wordId, tuple),
+      ]),
     ),
     levelProgress: file.levelProgress,
     stats: file.stats,

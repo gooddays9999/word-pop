@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { ttsUsable } from '../audio/tts'
-import { REVIEW_DAILY_CAP, REVIEW_SOFT_GATE } from '../config/session'
+import { REVIEW_DAILY_CAP } from '../config/session'
 import { LEVEL_BY_ID } from '../data/levels'
 import { WORD_DB } from '../data/words'
 import { buildLevelSession, buildReviewSession, type BuildContext } from '../engine/session/builder'
@@ -18,7 +18,7 @@ import type { SessionState } from '../types/session'
 import { todayStamp } from '../utils/date'
 import { mulberry32, seedFromString } from '../utils/random'
 import { bootLoad } from './boot'
-import { dueCount, newWordsRemainingToday } from './selectors'
+import { dueCount, newWordsRemainingToday, reviewGateThreshold } from './selectors'
 
 export type Screen =
   | { readonly name: 'title' }
@@ -104,7 +104,7 @@ export const useAppStore = create<AppStore>()((set, get) => ({
     }
     // 软门槛：欠账太多时先复习，防止新词越滚越多记不牢
     const due = dueCount(save)
-    if (due > REVIEW_SOFT_GATE) {
+    if (due > reviewGateThreshold(save)) {
       showToast(`待复习的单词已有 ${due} 个，先打复习副本清一清再开新关吧！`)
       return
     }

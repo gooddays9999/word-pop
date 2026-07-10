@@ -57,17 +57,19 @@ export function SettingsScreen() {
         <section className="panel mb-5 p-6">
           <h2 className="mb-1 text-lg font-extrabold">📆 每日新词量</h2>
           <p className="mb-4 text-xs text-[var(--ink-dim)]">
-            每天 20 个约 3 个半月学完 2100 词；复习量会随进度自动增加，量力而行
+            20/天 约 3 个半月学完 2100 词，50/天 约 6 周，200/天 约 11 天（冲刺模式，
+            复习量会非常大）；随时可调，量力而行
           </p>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             {NEW_WORDS_PER_DAY_OPTIONS.map((option) => (
               <Button
                 key={option}
                 variant={save.settings.newWordsPerDay === option ? 'primary' : 'ghost'}
                 size="md"
                 onClick={() => updateSettings({ newWordsPerDay: option })}
+                data-testid={`pace-${option}`}
               >
-                {option} 词
+                {option} 词{option >= 200 ? '🔥' : ''}
               </Button>
             ))}
           </div>

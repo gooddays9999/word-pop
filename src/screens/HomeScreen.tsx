@@ -1,9 +1,13 @@
 import { Button } from '../components/Button'
 import { Hud } from '../components/Hud'
 import { ProgressBar } from '../components/ProgressBar'
-import { REVIEW_SOFT_GATE } from '../config/session'
 import { WORD_DB } from '../data/words'
-import { dueCount, learnedCount, newWordsRemainingToday } from '../store/selectors'
+import {
+  dueCount,
+  learnedCount,
+  newWordsRemainingToday,
+  reviewGateThreshold,
+} from '../store/selectors'
 import { useAppStore } from '../store/store'
 
 export function HomeScreen() {
@@ -60,8 +64,8 @@ export function HomeScreen() {
                 </span>
               </div>
               <p className="mb-4 text-xs text-[var(--ink-dim)]">
-                {due > REVIEW_SOFT_GATE
-                  ? `⚠️ 待复习超过 ${REVIEW_SOFT_GATE} 个，先清副本才能开新关`
+                {due > reviewGateThreshold(save)
+                  ? `⚠️ 待复习超过 ${reviewGateThreshold(save)} 个，先清副本才能开新关`
                   : '去星球地图解锁新关卡、学习新单词'}
               </p>
               <Button

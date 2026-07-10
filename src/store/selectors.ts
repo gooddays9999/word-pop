@@ -1,3 +1,4 @@
+import { REVIEW_SOFT_GATE } from '../config/session'
 import { GRADUATED } from '../types/progress'
 import type { SaveData } from '../types/save'
 import type { LevelDef } from '../types/word'
@@ -9,6 +10,11 @@ export function newWordsRemainingToday(save: SaveData): number {
   const today = todayStamp()
   const used = save.stats.dailyLog[today]?.news ?? 0
   return Math.max(0, save.settings.newWordsPerDay - used)
+}
+
+/** 复习软门槛阈值：随每日新词量放大，避免高速档被一天的正常到期量锁死 */
+export function reviewGateThreshold(save: SaveData): number {
+  return Math.max(REVIEW_SOFT_GATE, save.settings.newWordsPerDay)
 }
 
 /** 当前到期待复习词数 */
