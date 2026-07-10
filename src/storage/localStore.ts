@@ -82,11 +82,35 @@ export function writeDailyBackup(
   try {
     if (storage.getItem(key) !== null) return
     storage.setItem(key, JSON.stringify(serializeSave(save)))
-    for (const staleKey of listBackupKeys(storage).slice(BACKUP_KEEP)) {
-      storage.removeItem(staleKey)
-    }
+    pruneBackups(storage)
   } catch (cause) {
     // 备份失败不阻塞游戏，但要留下线索
     console.error('[word-pop] 每日备份写入失败:', cause)
+  }
+}
+
+/**
+ * 覆盖性操作（导入/重置）前的安全快照：无条件写入、同日可覆盖。
+ * key 带 -snapshot 后缀，恢复时按字典序排在同日每日备份之前。
+ */
+export function writeSnapshotBackup(
+  save: SaveData,
+  today: DayStamp,
+  storage: Storage = defaultStorage(),
+): boolean {
+  const key = `${BACKUP_KEY_PREFIX}${today}-snapshot`
+  try {
+    storage.setItem(key, JSON.stringify(serializeSave(save)))
+    pruneBackups(storage)
+    return true
+  } catch (cause) {
+    console.error('[word-pop] 安全快照写入失败:', cause)
+    return false
+  }
+}
+
+function pruneBackups(storage: Storage): void {
+  for (const staleKey of listBackupKeys(storage).slice(BACKUP_KEEP)) {
+    storage.removeItem(staleKey)
   }
 }

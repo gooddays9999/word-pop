@@ -7,9 +7,10 @@ import {
   advanceTeach,
   answerQuestion,
   createSessionState,
+  currentItem,
 } from '../engine/session/runner'
 import { applyResults, type SessionSummary } from '../engine/session/results'
-import { persistSave, writeDailyBackup } from '../storage/localStore'
+import { persistSave, writeSnapshotBackup } from '../storage/localStore'
 import type { QuestionType } from '../types/question'
 import type { SaveData, SettingsState } from '../types/save'
 import type { SessionState } from '../types/session'
@@ -64,7 +65,10 @@ function buildContext(save: SaveData): BuildContext {
 }
 
 /** 结算并立即落盘（当次会话的成果绝不能丢） */
-function settleSession(save: SaveData, session: SessionState): {
+function settleSession(
+  save: SaveData,
+  session: SessionState,
+): {
   save: SaveData
   summary: SessionSummary
 } {
@@ -124,6 +128,8 @@ export const useAppStore = create<AppStore>()((set, get) => ({
   teachNext: () => {
     const { session } = get()
     if (!session) return
+    // 键盘自动重复可能在教学卡→题目切换瞬间重入，静默忽略
+    if (currentItem(session)?.kind !== 'teach') return
     const next = advanceTeach(session)
     if (next.done) {
       // 理论上教学卡后必有题目；防御：直接结算
@@ -155,8 +161,8 @@ export const useAppStore = create<AppStore>()((set, get) => ({
 
   replaceSave: (imported) => {
     const current = get().save
-    // 覆盖前把现存档写入今日备份位，给误导入留后路
-    writeDailyBackup(current, todayStamp())
+    // 覆盖前无条件快照现存档（同日可覆盖），给误导入留后路
+    writeSnapshotBackup(current, todayStamp())
     const persisted = persistSave(imported, new Date().toISOString())
     set({
       save: persisted.ok ? persisted.value : imported,
@@ -167,6 +173,7 @@ export const useAppStore = create<AppStore>()((set, get) => ({
   },
 
   resetSave: (fresh) => {
+    writeSnapshotBackup(get().save, todayStamp())
     const persisted = persistSave(fresh, new Date().toISOString())
     set({
       save: persisted.ok ? persisted.value : fresh,

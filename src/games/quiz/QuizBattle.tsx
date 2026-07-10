@@ -54,7 +54,15 @@ export function QuizBattle() {
 
   const [feedback, setFeedback] = useState<Feedback | null>(null)
   const startedAtRef = useRef(performance.now())
+  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const item = session ? currentItem(session) : null
+
+  useEffect(
+    () => () => {
+      if (feedbackTimerRef.current !== null) clearTimeout(feedbackTimerRef.current)
+    },
+    [],
+  )
 
   const question = useMemo(() => {
     if (!session || !item || item.kind !== 'question') return null
@@ -95,9 +103,13 @@ export function QuizBattle() {
     const responseMs = Math.round(performance.now() - startedAtRef.current)
     setFeedback({ correct, selectedId: wordId })
     if (!correct && ttsEnabled && answerEntry) speakWord(answerEntry.word)
-    setTimeout(
+    const sessionAtAnswer = session
+    feedbackTimerRef.current = setTimeout(
       () => {
+        feedbackTimerRef.current = null
         setFeedback(null)
+        // 会话已切换（中途撤退后开新会话）时，过期的作答绝不能落到新会话上
+        if (useAppStore.getState().session !== sessionAtAnswer) return
         answerCurrent(correct, responseMs)
       },
       correct ? FEEDBACK_MS_CORRECT : FEEDBACK_MS_WRONG,

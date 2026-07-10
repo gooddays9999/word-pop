@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import { Modal } from '../components/Modal'
 import { ProgressBar } from '../components/ProgressBar'
@@ -15,6 +15,15 @@ export function BattleScreen() {
   const session = useAppStore((state) => state.session)
   const quitSession = useAppStore((state) => state.quitSession)
   const [confirmQuit, setConfirmQuit] = useState(false)
+
+  // 战斗中误刷新/关页会丢弃本场成果，弹浏览器原生确认
+  useEffect(() => {
+    const warnBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault()
+    }
+    window.addEventListener('beforeunload', warnBeforeUnload)
+    return () => window.removeEventListener('beforeunload', warnBeforeUnload)
+  }, [])
 
   if (!session) return null
   const ratio = session.items.length === 0 ? 0 : session.cursor / session.items.length

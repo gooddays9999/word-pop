@@ -1,5 +1,11 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { listBackupKeys, loadSave, persistSave, writeDailyBackup } from './localStore'
+import {
+  listBackupKeys,
+  loadSave,
+  persistSave,
+  writeDailyBackup,
+  writeSnapshotBackup,
+} from './localStore'
 import { BACKUP_KEEP, BACKUP_KEY_PREFIX, STORAGE_KEY } from '../config/storage'
 import { createInitialSave } from '../engine/save'
 import { memoryStorage } from '../test/memoryStorage'
@@ -79,5 +85,40 @@ describe('writeDailyBackup', () => {
     const first = storage.getItem(`${BACKUP_KEY_PREFIX}${TODAY}`)
     writeDailyBackup({ ...save, player: { ...save.player, coins: 999 } }, TODAY, storage)
     expect(storage.getItem(`${BACKUP_KEY_PREFIX}${TODAY}`)).toBe(first)
+  })
+})
+
+describe('writeSnapshotBackup（导入/重置前的安全快照）', () => {
+  it('无条件写入，同日重复调用会覆盖为最新状态', () => {
+    const save = createInitialSave(TODAY, NOW_ISO)
+    expect(writeSnapshotBackup(save, TODAY, storage)).toBe(true)
+    const first = storage.getItem(`${BACKUP_KEY_PREFIX}${TODAY}-snapshot`)
+    expect(first).not.toBeNull()
+    writeSnapshotBackup({ ...save, player: { ...save.player, coins: 999 } }, TODAY, storage)
+    const second = storage.getItem(`${BACKUP_KEY_PREFIX}${TODAY}-snapshot`)
+    expect(second).not.toBe(first)
+  })
+
+  it('当日已有每日备份时快照仍写入，且损坏主档优先从快照恢复', () => {
+    const stale = createInitialSave(TODAY, NOW_ISO)
+    writeDailyBackup(stale, TODAY, storage) // 模拟当天启动时写的旧备份
+    const richer = { ...stale, player: { ...stale.player, coins: 777 } }
+    writeSnapshotBackup(richer, TODAY, storage) // 导入前快照（含当日进度）
+    storage.setItem(STORAGE_KEY, '{corrupt json')
+    const result = loadSave(storage)
+    expect(result.ok).toBe(true)
+    if (result.ok) {
+      expect(result.value.recoveredFromBackup).toBe(true)
+      expect(result.value.save.player.coins).toBe(777)
+    }
+  })
+
+  it('写入失败返回 false 而不抛出', () => {
+    const throwing = {
+      setItem: () => {
+        throw new DOMException('QuotaExceededError')
+      },
+    } as unknown as Storage
+    expect(writeSnapshotBackup(createInitialSave(TODAY, NOW_ISO), TODAY, throwing)).toBe(false)
   })
 })
