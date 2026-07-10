@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import { attachPersistence } from './store/persistence.ts'
 import './index.css'
+
+attachPersistence()
 
 const rootElement = document.getElementById('root')
 if (!rootElement) {

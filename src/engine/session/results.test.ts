@@ -41,7 +41,7 @@ describe('applyResults — 进度回放', () => {
 
     expect(next.wordProgress['a']?.box).toBe(1)
     expect(next.wordProgress['b']?.box).toBe(1)
-    expect(summary.newlyLearned.sort()).toEqual(['a', 'b'])
+    expect([...summary.newlyLearned].sort()).toEqual(['a', 'b'])
     expect(next.stats.dailyLog[TODAY]).toMatchObject({ news: 2, reviews: 0, correct: 4, wrong: 0 })
   })
 

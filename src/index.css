@@ -2,6 +2,24 @@
 
 :root {
   color-scheme: dark;
+  /* 深空色板 */
+  --space-950: #080b22;
+  --space-900: #0d1030;
+  --space-800: #161a45;
+  --space-700: #232a5f;
+  --space-line: #39418a;
+  --ink: #eef1ff;
+  --ink-dim: #9aa3d0;
+  /* 角色色 */
+  --nova: #59e0ff; /* 交互主色 */
+  --nova-deep: #1e78b8;
+  --star-gold: #ffcf5c; /* 奖励 */
+  --hp-red: #ff6b81; /* 错误/危险 */
+  --leaf: #5ef2a0; /* 正确/成功 */
+  --font-display:
+    'PingFang SC', 'Microsoft YaHei', ui-rounded, system-ui, sans-serif;
+  --font-latin: 'Arial Rounded MT Bold', ui-rounded, 'PingFang SC', system-ui, sans-serif;
+  --font-num: ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
 html,
@@ -12,13 +30,328 @@ body,
 
 body {
   margin: 0;
-  background: #0b1026;
-  color: #e6e9f5;
-  font-family:
-    'PingFang SC',
-    'Microsoft YaHei',
-    system-ui,
-    -apple-system,
-    sans-serif;
+  color: var(--ink);
+  font-family: var(--font-display);
+  background:
+    radial-gradient(1100px 700px at 75% -10%, #232a6b 0%, transparent 55%),
+    radial-gradient(900px 600px at -10% 110%, #1a1f52 0%, transparent 50%),
+    linear-gradient(180deg, var(--space-900), var(--space-950));
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---- 星空背景 ---- */
+.starfield,
+.starfield::before,
+.starfield::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+}
+.starfield::before {
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 22%, #fff9, transparent),
+    radial-gradient(1px 1px at 32% 68%, #fff7, transparent),
+    radial-gradient(2px 2px at 55% 15%, #ffd8, transparent),
+    radial-gradient(1px 1px at 71% 43%, #fff8, transparent),
+    radial-gradient(1.5px 1.5px at 87% 74%, #fff6, transparent),
+    radial-gradient(1px 1px at 44% 88%, #fff7, transparent),
+    radial-gradient(1.5px 1.5px at 22% 51%, #9ff8, transparent),
+    radial-gradient(1px 1px at 92% 12%, #fff9, transparent);
+  animation: twinkle 4.5s ease-in-out infinite alternate;
+}
+.starfield::after {
+  background-image:
+    radial-gradient(1px 1px at 8% 78%, #fff6, transparent),
+    radial-gradient(1.5px 1.5px at 63% 61%, #ffe9, transparent),
+    radial-gradient(1px 1px at 79% 29%, #9ef6, transparent),
+    radial-gradient(2px 2px at 39% 34%, #fff5, transparent),
+    radial-gradient(1px 1px at 96% 55%, #fff8, transparent);
+  animation: twinkle 6s ease-in-out infinite alternate-reverse;
+}
+
+/* ---- 面板与按钮 ---- */
+.panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 32%),
+    var(--space-800);
+  border: 2px solid var(--space-line);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  font-family: var(--font-display);
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+  user-select: none;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--nova);
+  outline-offset: 2px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+.btn-primary {
+  background: linear-gradient(180deg, #79e9ff, #2fb9e8 60%, var(--nova-deep));
+  border-color: #a7f0ff;
+  color: #05263a;
+  box-shadow:
+    0 6px 0 #16608f,
+    0 12px 24px rgba(47, 185, 232, 0.35);
+}
+.btn-primary:active {
+  box-shadow:
+    0 2px 0 #16608f,
+    0 6px 12px rgba(47, 185, 232, 0.3);
+}
+.btn-gold {
+  background: linear-gradient(180deg, #ffe49a, var(--star-gold) 55%, #e2a23b);
+  border-color: #ffedbb;
+  color: #4a2e00;
+  box-shadow:
+    0 6px 0 #a86f1d,
+    0 12px 24px rgba(255, 207, 92, 0.3);
+}
+.btn-gold:active {
+  box-shadow: 0 2px 0 #a86f1d;
+}
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--space-line);
+  color: var(--ink);
+}
+.btn-danger {
+  background: linear-gradient(180deg, #ff9aab, var(--hp-red) 60%, #d63c56);
+  border-color: #ffc2cc;
+  color: #47000d;
+  box-shadow: 0 6px 0 #8f1f33;
+}
+.btn-lg {
+  padding: 0.9rem 2rem;
+  font-size: 1.15rem;
+}
+.btn-md {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+}
+.btn-sm {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* ---- 答题选项 ---- */
+.choice-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border-radius: 16px;
+  border: 2px solid var(--space-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 40%),
+    var(--space-700);
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    border-color 0.1s ease,
+    background 0.1s ease;
+}
+.choice-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--nova);
+}
+.choice-btn:focus-visible {
+  outline: 3px solid var(--nova);
+  outline-offset: 2px;
+}
+.choice-btn:disabled {
+  cursor: default;
+}
+.choice-btn.is-correct {
+  border-color: var(--leaf);
+  background: linear-gradient(180deg, rgba(94, 242, 160, 0.25), rgba(94, 242, 160, 0.08)),
+    var(--space-700);
+  animation: pulse-green 0.5s ease;
+}
+.choice-btn.is-wrong {
+  border-color: var(--hp-red);
+  background: linear-gradient(180deg, rgba(255, 107, 129, 0.25), rgba(255, 107, 129, 0.08)),
+    var(--space-700);
+  animation: shake 0.4s ease;
+}
+.choice-btn.is-dim {
+  opacity: 0.4;
+}
+.choice-key {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: var(--font-num);
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+/* ---- 怪物舞台 ---- */
+.monster-ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.16), transparent 55%),
+    radial-gradient(circle, #2c3475 0%, #1a2050 70%);
+  border: 3px solid var(--space-line);
+  box-shadow:
+    0 0 0 8px rgba(89, 224, 255, 0.06),
+    0 0 42px rgba(89, 224, 255, 0.22),
+    inset 0 -14px 30px rgba(0, 0, 0, 0.35);
+  animation: floaty 3.2s ease-in-out infinite;
+}
+.monster-emoji {
+  font-size: 84px;
+  line-height: 1;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+}
+.monster-ring.is-hit {
+  animation: pop-burst 0.5s ease forwards;
+}
+.monster-ring.is-happy {
+  animation: monster-taunt 0.5s ease;
+}
+
+/* ---- 动画 ---- */
+@keyframes twinkle {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+}
+@keyframes pop-burst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  35% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes monster-taunt {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.14) rotate(-4deg);
+  }
+}
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(94, 242, 160, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgba(94, 242, 160, 0);
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes rise-fade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-46px);
+    opacity: 0;
+  }
+}
+.anim-slide-up {
+  animation: slide-up 0.3s ease both;
+}
+.xp-float {
+  animation: rise-fade 0.9s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
