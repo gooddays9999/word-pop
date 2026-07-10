@@ -48,7 +48,10 @@ export function TeachCard({ entry, index, total, onNext }: TeachCardProps) {
         </button>
       </div>
       {entry.phonetic && (
-        <div className="mb-4 text-lg text-[var(--ink-dim)]" style={{ fontFamily: 'var(--font-num)' }}>
+        <div
+          className="mb-4 text-lg text-[var(--ink-dim)]"
+          style={{ fontFamily: 'var(--font-num)' }}
+        >
           {entry.phonetic}
         </div>
       )}
@@ -64,7 +67,7 @@ export function TeachCard({ entry, index, total, onNext }: TeachCardProps) {
           <p className="text-sm text-[var(--ink-dim)]">{entry.exampleZh}</p>
         </div>
       )}
-      <Button variant="gold" size="lg" onClick={onNext}>
+      <Button variant="gold" size="lg" onClick={onNext} data-testid="teach-next">
         认识了，下一个 →
       </Button>
       <p className="mt-3 text-xs text-[var(--ink-dim)]">按回车键继续</p>

@@ -43,10 +43,12 @@ export function ChoicePanel({ question, selectedId, locked, onSelect }: ChoicePa
           className={optionClass(question, option.wordId, selectedId, locked)}
           onClick={() => onSelect(option.wordId)}
           disabled={locked}
+          data-testid="choice-option"
         >
           <span className="choice-key">{index + 1}</span>
           <span
             className="truncate"
+            data-testid="choice-label"
             style={question.type === 'reverse' ? { fontFamily: 'var(--font-latin)' } : undefined}
           >
             {option.label}

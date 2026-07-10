@@ -13,8 +13,11 @@ import { ChoicePanel } from './ChoicePanel'
 import { MonsterView, type MonsterPhase } from './MonsterView'
 import { TeachCard } from './TeachCard'
 
-const FEEDBACK_MS_CORRECT = 900
-const FEEDBACK_MS_WRONG = 2000
+/** E2E/开发提速：URL 带 ?fast=1 时缩短反馈停留 */
+const FAST_MODE =
+  typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('fast')
+const FEEDBACK_MS_CORRECT = FAST_MODE ? 150 : 900
+const FEEDBACK_MS_WRONG = FAST_MODE ? 300 : 2000
 
 interface Feedback {
   readonly correct: boolean
@@ -112,6 +115,7 @@ export function QuizBattle() {
         </div>
         <div
           className="text-4xl font-extrabold"
+          data-testid="prompt"
           style={question.promptKind === 'en' ? { fontFamily: 'var(--font-latin)' } : undefined}
         >
           {question.prompt}
