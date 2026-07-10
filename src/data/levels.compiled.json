@@ -1,0 +1,217 @@
+{
+  "regions": [
+    {
+      "id": "school",
+      "name": "校园岛",
+      "emoji": "🏫",
+      "description": "学校生活与学习",
+      "levelIds": [
+        "school-1",
+        "school-2",
+        "school-3",
+        "school-4",
+        "school-5"
+      ]
+    },
+    {
+      "id": "home",
+      "name": "家园镇",
+      "emoji": "🏠",
+      "description": "家庭与日常生活",
+      "levelIds": []
+    },
+    {
+      "id": "food",
+      "name": "食物湾",
+      "emoji": "🍎",
+      "description": "食物与饮品",
+      "levelIds": []
+    },
+    {
+      "id": "sports",
+      "name": "运动谷",
+      "emoji": "⚽",
+      "description": "运动、健康与身体",
+      "levelIds": []
+    },
+    {
+      "id": "nature",
+      "name": "自然森林",
+      "emoji": "🌲",
+      "description": "自然、天气与植物",
+      "levelIds": []
+    },
+    {
+      "id": "animals",
+      "name": "动物草原",
+      "emoji": "🦁",
+      "description": "动物世界",
+      "levelIds": []
+    },
+    {
+      "id": "travel",
+      "name": "旅行港",
+      "emoji": "✈️",
+      "description": "交通、旅行与方位",
+      "levelIds": []
+    },
+    {
+      "id": "science",
+      "name": "科技城",
+      "emoji": "🔬",
+      "description": "科学、技术与数字",
+      "levelIds": []
+    },
+    {
+      "id": "city",
+      "name": "城市广场",
+      "emoji": "🏙️",
+      "description": "社会、职业与文化",
+      "levelIds": []
+    },
+    {
+      "id": "core",
+      "name": "万能平原",
+      "emoji": "⭐",
+      "description": "高频核心词汇",
+      "levelIds": []
+    }
+  ],
+  "levels": [
+    {
+      "id": "school-1",
+      "regionId": "school",
+      "index": 1,
+      "wordIds": [
+        "school",
+        "student",
+        "teacher",
+        "class",
+        "classroom",
+        "classmate",
+        "grade",
+        "desk",
+        "blackboard",
+        "chalk",
+        "pen",
+        "pencil",
+        "eraser",
+        "ruler",
+        "book",
+        "notebook",
+        "textbook",
+        "dictionary",
+        "schoolbag",
+        "lesson"
+      ]
+    },
+    {
+      "id": "school-2",
+      "regionId": "school",
+      "index": 2,
+      "wordIds": [
+        "subject",
+        "math",
+        "history",
+        "geography",
+        "physics",
+        "chemistry",
+        "biology",
+        "science",
+        "music",
+        "art",
+        "exam",
+        "test",
+        "quiz",
+        "homework",
+        "exercise",
+        "question",
+        "answer",
+        "mistake",
+        "score",
+        "mark"
+      ]
+    },
+    {
+      "id": "school-3",
+      "regionId": "school",
+      "index": 3,
+      "wordIds": [
+        "read",
+        "write",
+        "spell",
+        "learn",
+        "study",
+        "teach",
+        "listen",
+        "speak",
+        "say",
+        "talk",
+        "ask",
+        "tell",
+        "understand",
+        "know",
+        "remember",
+        "forget",
+        "think",
+        "idea",
+        "knowledge",
+        "library"
+      ]
+    },
+    {
+      "id": "school-4",
+      "regionId": "school",
+      "index": 4,
+      "wordIds": [
+        "playground",
+        "gym",
+        "office",
+        "dining hall",
+        "dormitory",
+        "uniform",
+        "timetable",
+        "term",
+        "semester",
+        "holiday",
+        "vacation",
+        "weekend",
+        "begin",
+        "finish",
+        "pass",
+        "fail",
+        "review",
+        "practice",
+        "prepare",
+        "discuss"
+      ]
+    },
+    {
+      "id": "school-5",
+      "regionId": "school",
+      "index": 5,
+      "wordIds": [
+        "explain",
+        "describe",
+        "translate",
+        "repeat",
+        "copy",
+        "check",
+        "correct",
+        "wrong",
+        "difficult",
+        "easy",
+        "clever",
+        "hardworking",
+        "lazy",
+        "careful",
+        "absent",
+        "early",
+        "late",
+        "course",
+        "meaning",
+        "sentence"
+      ]
+    }
+  ]
+}

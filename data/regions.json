@@ -1,0 +1,14 @@
+{
+  "regions": [
+    { "id": "school", "name": "校园岛", "emoji": "🏫", "description": "学校生活与学习" },
+    { "id": "home", "name": "家园镇", "emoji": "🏠", "description": "家庭与日常生活" },
+    { "id": "food", "name": "食物湾", "emoji": "🍎", "description": "食物与饮品" },
+    { "id": "sports", "name": "运动谷", "emoji": "⚽", "description": "运动、健康与身体" },
+    { "id": "nature", "name": "自然森林", "emoji": "🌲", "description": "自然、天气与植物" },
+    { "id": "animals", "name": "动物草原", "emoji": "🦁", "description": "动物世界" },
+    { "id": "travel", "name": "旅行港", "emoji": "✈️", "description": "交通、旅行与方位" },
+    { "id": "science", "name": "科技城", "emoji": "🔬", "description": "科学、技术与数字" },
+    { "id": "city", "name": "城市广场", "emoji": "🏙️", "description": "社会、职业与文化" },
+    { "id": "core", "name": "万能平原", "emoji": "⭐", "description": "高频核心词汇" }
+  ]
+}

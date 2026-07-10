@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "school",
+    "word": "school",
+    "phonetic": "/skuːl/",
+    "pos": "n.",
+    "meaning": "学校",
+    "example": "I go to school by bike.",
+    "exampleZh": "我骑自行车上学。",
+    "theme": "school"
+  },
+  {
+    "id": "student",
+    "word": "student",
+    "phonetic": "/ˈstuːdnt/",
+    "pos": "n.",
+    "meaning": "学生",
+    "example": "She is a middle school student.",
+    "exampleZh": "她是一名中学生。",
+    "theme": "school"
+  },
+  {
+    "id": "teacher",
+    "word": "teacher",
+    "phonetic": "/ˈtiːtʃər/",
+    "pos": "n.",
+    "meaning": "教师；老师",
+    "example": "Our English teacher is very kind.",
+    "exampleZh": "我们的英语老师非常和蔼。",
+    "theme": "school"
+  },
+  {
+    "id": "class",
+    "word": "class",
+    "phonetic": "/klæs/",
+    "pos": "n.",
+    "meaning": "班级；（一节）课",
+    "example": "We have eight classes every day.",
+    "exampleZh": "我们每天有八节课。",
+    "theme": "school"
+  },
+  {
+    "id": "classroom",
+    "word": "classroom",
+    "phonetic": "/ˈklæsruːm/",
+    "pos": "n.",
+    "meaning": "教室",
+    "example": "The classroom is clean and bright.",
+    "exampleZh": "教室干净又明亮。",
+    "theme": "school"
+  },
+  {
+    "id": "classmate",
+    "word": "classmate",
+    "phonetic": "/ˈklæsmeɪt/",
+    "pos": "n.",
+    "meaning": "同班同学",
+    "example": "Li Ming is my classmate.",
+    "exampleZh": "李明是我的同班同学。",
+    "theme": "school"
+  },
+  {
+    "id": "grade",
+    "word": "grade",
+    "phonetic": "/ɡreɪd/",
+    "pos": "n.",
+    "meaning": "年级；等级",
+    "example": "He is in Grade Eight.",
+    "exampleZh": "他上八年级。",
+    "theme": "school"
+  },
+  {
+    "id": "desk",
+    "word": "desk",
+    "phonetic": "/desk/",
+    "pos": "n.",
+    "meaning": "书桌；课桌",
+    "example": "There is a book on the desk.",
+    "exampleZh": "课桌上有一本书。",
+    "theme": "school"
+  },
+  {
+    "id": "blackboard",
+    "word": "blackboard",
+    "phonetic": "/ˈblækbɔːrd/",
+    "pos": "n.",
+    "meaning": "黑板",
+    "example": "The teacher writes on the blackboard.",
+    "exampleZh": "老师在黑板上写字。",
+    "theme": "school"
+  },
+  {
+    "id": "chalk",
+    "word": "chalk",
+    "phonetic": "/tʃɔːk/",
+    "pos": "n.",
+    "meaning": "粉笔",
+    "example": "The teacher picked up a piece of chalk.",
+    "exampleZh": "老师拿起一支粉笔。",
+    "theme": "school"
+  },
+  {
+    "id": "pen",
+    "word": "pen",
+    "phonetic": "/pen/",
+    "pos": "n.",
+    "meaning": "钢笔；笔",
+    "example": "Can I borrow your pen?",
+    "exampleZh": "我能借你的钢笔吗？",
+    "theme": "school"
+  },
+  {
+    "id": "pencil",
+    "word": "pencil",
+    "phonetic": "/ˈpensl/",
+    "pos": "n.",
+    "meaning": "铅笔",
+    "example": "I draw with a pencil.",
+    "exampleZh": "我用铅笔画画。",
+    "theme": "school"
+  },
+  {
+    "id": "eraser",
+    "word": "eraser",
+    "phonetic": "/ɪˈreɪsər/",
+    "pos": "n.",
+    "meaning": "橡皮；黑板擦",
+    "example": "May I use your eraser?",
+    "exampleZh": "我可以用一下你的橡皮吗？",
+    "theme": "school"
+  },
+  {
+    "id": "ruler",
+    "word": "ruler",
+    "phonetic": "/ˈruːlər/",
+    "pos": "n.",
+    "meaning": "尺子",
+    "example": "Draw a line with a ruler.",
+    "exampleZh": "用尺子画一条线。",
+    "theme": "school"
+  },
+  {
+    "id": "book",
+    "word": "book",
+    "phonetic": "/bʊk/",
+    "pos": "n.",
+    "meaning": "书",
+    "example": "This book is very interesting.",
+    "exampleZh": "这本书非常有趣。",
+    "theme": "school"
+  },
+  {
+    "id": "notebook",
+    "word": "notebook",
+    "phonetic": "/ˈnoʊtbʊk/",
+    "pos": "n.",
+    "meaning": "笔记本",
+    "example": "Write the new words in your notebook.",
+    "exampleZh": "把生词写在笔记本上。",
+    "theme": "school"
+  },
+  {
+    "id": "textbook",
+    "word": "textbook",
+    "phonetic": "/ˈtekstbʊk/",
+    "pos": "n.",
+    "meaning": "教科书；课本",
+    "example": "Open your textbook to page ten.",
+    "exampleZh": "把课本翻到第十页。",
+    "theme": "school"
+  },
+  {
+    "id": "dictionary",
+    "word": "dictionary",
+    "phonetic": "/ˈdɪkʃəneri/",
+    "pos": "n.",
+    "meaning": "词典；字典",
+    "example": "Look up the word in the dictionary.",
+    "exampleZh": "在词典里查这个单词。",
+    "theme": "school"
+  },
+  {
+    "id": "schoolbag",
+    "word": "schoolbag",
+    "phonetic": "/ˈskuːlbæɡ/",
+    "pos": "n.",
+    "meaning": "书包",
+    "example": "My schoolbag is heavy.",
+    "exampleZh": "我的书包很重。",
+    "theme": "school"
+  },
+  {
+    "id": "lesson",
+    "word": "lesson",
+    "phonetic": "/ˈlesn/",
+    "pos": "n.",
+    "meaning": "（一节）课；教训",
+    "example": "We learned a new lesson today.",
+    "exampleZh": "我们今天学了新的一课。",
+    "theme": "school"
+  },
+  {
+    "id": "subject",
+    "word": "subject",
+    "phonetic": "/ˈsʌbdʒɪkt/",
+    "pos": "n.",
+    "meaning": "学科；科目；主题",
+    "example": "What is your favorite subject?",
+    "exampleZh": "你最喜欢的科目是什么？",
+    "theme": "school"
+  },
+  {
+    "id": "math",
+    "word": "math",
+    "phonetic": "/mæθ/",
+    "pos": "n.",
+    "meaning": "数学",
+    "example": "Math is difficult but useful.",
+    "exampleZh": "数学难但有用。",
+    "theme": "school"
+  },
+  {
+    "id": "history",
+    "word": "history",
+    "phonetic": "/ˈhɪstri/",
+    "pos": "n.",
+    "meaning": "历史",
+    "example": "I like history class.",
+    "exampleZh": "我喜欢历史课。",
+    "theme": "school"
+  },
+  {
+    "id": "geography",
+    "word": "geography",
+    "phonetic": "/dʒiˈɑːɡrəfi/",
+    "pos": "n.",
+    "meaning": "地理",
+    "example": "We study maps in geography.",
+    "exampleZh": "我们在地理课上学习地图。",
+    "theme": "school"
+  },
+  {
+    "id": "physics",
+    "word": "physics",
+    "phonetic": "/ˈfɪzɪks/",
+    "pos": "n.",
+    "meaning": "物理",
+    "example": "Physics explains how things move.",
+    "exampleZh": "物理学解释物体如何运动。",
+    "theme": "school"
+  },
+  {
+    "id": "chemistry",
+    "word": "chemistry",
+    "phonetic": "/ˈkemɪstri/",
+    "pos": "n.",
+    "meaning": "化学",
+    "example": "We do experiments in chemistry class.",
+    "exampleZh": "我们在化学课上做实验。",
+    "theme": "school"
+  },
+  {
+    "id": "biology",
+    "word": "biology",
+    "phonetic": "/baɪˈɑːlədʒi/",
+    "pos": "n.",
+    "meaning": "生物学",
+    "example": "Biology is the study of living things.",
+    "exampleZh": "生物学是研究生物的学科。",
+    "theme": "school"
+  },
+  {
+    "id": "science",
+    "word": "science",
+    "phonetic": "/ˈsaɪəns/",
+    "pos": "n.",
+    "meaning": "科学",
+    "example": "Science makes our life better.",
+    "exampleZh": "科学让我们的生活更美好。",
+    "theme": "school"
+  },
+  {
+    "id": "music",
+    "word": "music",
+    "phonetic": "/ˈmjuːzɪk/",
+    "pos": "n.",
+    "meaning": "音乐",
+    "example": "She listens to music after school.",
+    "exampleZh": "她放学后听音乐。",
+    "theme": "school"
+  },
+  {
+    "id": "art",
+    "word": "art",
+    "phonetic": "/ɑːrt/",
+    "pos": "n.",
+    "meaning": "美术；艺术",
+    "example": "We paint pictures in art class.",
+    "exampleZh": "我们在美术课上画画。",
+    "theme": "school"
+  },
+  {
+    "id": "exam",
+    "word": "exam",
+    "phonetic": "/ɪɡˈzæm/",
+    "pos": "n.",
+    "meaning": "考试",
+    "example": "I passed the English exam.",
+    "exampleZh": "我通过了英语考试。",
+    "theme": "school"
+  },
+  {
+    "id": "test",
+    "word": "test",
+    "phonetic": "/test/",
+    "pos": "n./v.",
+    "meaning": "测验；测试",
+    "example": "We have a math test tomorrow.",
+    "exampleZh": "我们明天有数学测验。",
+    "theme": "school"
+  },
+  {
+    "id": "quiz",
+    "word": "quiz",
+    "phonetic": "/kwɪz/",
+    "pos": "n.",
+    "meaning": "小测验；问答比赛",
+    "example": "The teacher gave us a quiz.",
+    "exampleZh": "老师给我们做了个小测验。",
+    "theme": "school"
+  },
+  {
+    "id": "homework",
+    "word": "homework",
+    "phonetic": "/ˈhoʊmwɜːrk/",
+    "pos": "n.",
+    "meaning": "家庭作业",
+    "example": "I finish my homework before dinner.",
+    "exampleZh": "我在晚饭前完成作业。",
+    "theme": "school"
+  },
+  {
+    "id": "exercise",
+    "word": "exercise",
+    "phonetic": "/ˈeksərsaɪz/",
+    "pos": "n./v.",
+    "meaning": "练习；锻炼",
+    "example": "Do the exercises on page five.",
+    "exampleZh": "做第五页的练习。",
+    "theme": "school"
+  },
+  {
+    "id": "question",
+    "word": "question",
+    "phonetic": "/ˈkwestʃən/",
+    "pos": "n.",
+    "meaning": "问题",
+    "example": "May I ask a question?",
+    "exampleZh": "我可以问一个问题吗？",
+    "theme": "school"
+  },
+  {
+    "id": "answer",
+    "word": "answer",
+    "phonetic": "/ˈænsər/",
+    "pos": "n./v.",
+    "meaning": "答案；回答",
+    "example": "Do you know the answer?",
+    "exampleZh": "你知道答案吗？",
+    "theme": "school"
+  },
+  {
+    "id": "mistake",
+    "word": "mistake",
+    "phonetic": "/mɪˈsteɪk/",
+    "pos": "n.",
+    "meaning": "错误",
+    "example": "Do not be afraid of making mistakes.",
+    "exampleZh": "不要害怕犯错误。",
+    "theme": "school"
+  },
+  {
+    "id": "score",
+    "word": "score",
+    "phonetic": "/skɔːr/",
+    "pos": "n./v.",
+    "meaning": "分数；得分",
+    "example": "She got a high score in the test.",
+    "exampleZh": "她测验得了高分。",
+    "theme": "school"
+  },
+  {
+    "id": "mark",
+    "word": "mark",
+    "phonetic": "/mɑːrk/",
+    "pos": "n./v.",
+    "meaning": "分数；标记",
+    "example": "He got full marks in math.",
+    "exampleZh": "他数学得了满分。",
+    "theme": "school"
+  },
+  {
+    "id": "read",
+    "word": "read",
+    "phonetic": "/riːd/",
+    "pos": "v.",
+    "meaning": "阅读；读",
+    "example": "I read English every morning.",
+    "exampleZh": "我每天早晨读英语。",
+    "theme": "school"
+  },
+  {
+    "id": "write",
+    "word": "write",
+    "phonetic": "/raɪt/",
+    "pos": "v.",
+    "meaning": "写；书写",
+    "example": "Please write your name here.",
+    "exampleZh": "请把你的名字写在这里。",
+    "theme": "school"
+  },
+  {
+    "id": "spell",
+    "word": "spell",
+    "phonetic": "/spel/",
+    "pos": "v.",
+    "meaning": "拼写",
+    "example": "Can you spell the word apple?",
+    "exampleZh": "你会拼写 apple 这个单词吗？",
+    "theme": "school"
+  },
+  {
+    "id": "learn",
+    "word": "learn",
+    "phonetic": "/lɜːrn/",
+    "pos": "v.",
+    "meaning": "学习；学会",
+    "example": "We learn something new every day.",
+    "exampleZh": "我们每天都学到新东西。",
+    "theme": "school"
+  },
+  {
+    "id": "study",
+    "word": "study",
+    "phonetic": "/ˈstʌdi/",
+    "pos": "v./n.",
+    "meaning": "学习；研究",
+    "example": "He studies hard at school.",
+    "exampleZh": "他在学校学习很努力。",
+    "theme": "school"
+  },
+  {
+    "id": "teach",
+    "word": "teach",
+    "phonetic": "/tiːtʃ/",
+    "pos": "v.",
+    "meaning": "教；讲授",
+    "example": "Mr. Wang teaches us Chinese.",
+    "exampleZh": "王老师教我们语文。",
+    "theme": "school"
+  },
+  {
+    "id": "listen",
+    "word": "listen",
+    "phonetic": "/ˈlɪsn/",
+    "pos": "v.",
+    "meaning": "听",
+    "example": "Listen to the teacher carefully.",
+    "exampleZh": "认真听老师讲。",
+    "theme": "school"
+  },
+  {
+    "id": "speak",
+    "word": "speak",
+    "phonetic": "/spiːk/",
+    "pos": "v.",
+    "meaning": "说（语言）；发言",
+    "example": "Do you speak English?",
+    "exampleZh": "你会说英语吗？",
+    "theme": "school"
+  },
+  {
+    "id": "say",
+    "word": "say",
+    "phonetic": "/seɪ/",
+    "pos": "v.",
+    "meaning": "说；讲",
+    "example": "What did the teacher say?",
+    "exampleZh": "老师说了什么？",
+    "theme": "school"
+  },
+  {
+    "id": "talk",
+    "word": "talk",
+    "phonetic": "/tɔːk/",
+    "pos": "v./n.",
+    "meaning": "谈话；交谈",
+    "example": "Do not talk in class.",
+    "exampleZh": "上课不要讲话。",
+    "theme": "school"
+  },
+  {
+    "id": "ask",
+    "word": "ask",
+    "phonetic": "/æsk/",
+    "pos": "v.",
+    "meaning": "问；请求",
+    "example": "Ask the teacher if you do not understand.",
+    "exampleZh": "不懂就问老师。",
+    "theme": "school"
+  },
+  {
+    "id": "tell",
+    "word": "tell",
+    "phonetic": "/tel/",
+    "pos": "v.",
+    "meaning": "告诉；讲述",
+    "example": "Please tell me the answer.",
+    "exampleZh": "请告诉我答案。",
+    "theme": "school"
+  },
+  {
+    "id": "understand",
+    "word": "understand",
+    "phonetic": "/ˌʌndərˈstænd/",
+    "pos": "v.",
+    "meaning": "理解；明白",
+    "example": "Now I understand this sentence.",
+    "exampleZh": "现在我理解这个句子了。",
+    "theme": "school"
+  },
+  {
+    "id": "know",
+    "word": "know",
+    "phonetic": "/noʊ/",
+    "pos": "v.",
+    "meaning": "知道；认识",
+    "example": "I know the answer to this question.",
+    "exampleZh": "我知道这道题的答案。",
+    "theme": "school"
+  },
+  {
+    "id": "remember",
+    "word": "remember",
+    "phonetic": "/rɪˈmembər/",
+    "pos": "v.",
+    "meaning": "记住；想起",
+    "example": "Remember to bring your textbook.",
+    "exampleZh": "记得带课本。",
+    "theme": "school"
+  },
+  {
+    "id": "forget",
+    "word": "forget",
+    "phonetic": "/fərˈɡet/",
+    "pos": "v.",
+    "meaning": "忘记",
+    "example": "Do not forget your homework.",
+    "exampleZh": "别忘了你的作业。",
+    "theme": "school"
+  },
+  {
+    "id": "think",
+    "word": "think",
+    "phonetic": "/θɪŋk/",
+    "pos": "v.",
+    "meaning": "思考；认为",
+    "example": "Think before you answer.",
+    "exampleZh": "回答前先思考。",
+    "theme": "school"
+  },
+  {
+    "id": "idea",
+    "word": "idea",
+    "phonetic": "/aɪˈdiːə/",
+    "pos": "n.",
+    "meaning": "主意；想法",
+    "example": "That is a good idea!",
+    "exampleZh": "那是个好主意！",
+    "theme": "school"
+  },
+  {
+    "id": "knowledge",
+    "word": "knowledge",
+    "phonetic": "/ˈnɑːlɪdʒ/",
+    "pos": "n.",
+    "meaning": "知识",
+    "example": "Books give us knowledge.",
+    "exampleZh": "书本给我们知识。",
+    "theme": "school"
+  },
+  {
+    "id": "library",
+    "word": "library",
+    "phonetic": "/ˈlaɪbreri/",
+    "pos": "n.",
+    "meaning": "图书馆",
+    "example": "I borrow books from the library.",
+    "exampleZh": "我从图书馆借书。",
+    "theme": "school"
+  },
+  {
+    "id": "playground",
+    "word": "playground",
+    "phonetic": "/ˈpleɪɡraʊnd/",
+    "pos": "n.",
+    "meaning": "操场；游乐场",
+    "example": "The students are playing on the playground.",
+    "exampleZh": "学生们在操场上玩。",
+    "theme": "school"
+  },
+  {
+    "id": "gym",
+    "word": "gym",
+    "phonetic": "/dʒɪm/",
+    "pos": "n.",
+    "meaning": "体育馆；健身房",
+    "example": "We play basketball in the gym.",
+    "exampleZh": "我们在体育馆打篮球。",
+    "theme": "school"
+  },
+  {
+    "id": "office",
+    "word": "office",
+    "phonetic": "/ˈɔːfɪs/",
+    "pos": "n.",
+    "meaning": "办公室",
+    "example": "The teachers' office is on the second floor.",
+    "exampleZh": "教师办公室在二楼。",
+    "theme": "school"
+  },
+  {
+    "id": "dining hall",
+    "word": "dining hall",
+    "phonetic": "/ˈdaɪnɪŋ hɔːl/",
+    "pos": "n.",
+    "meaning": "食堂；餐厅",
+    "example": "We have lunch in the dining hall.",
+    "exampleZh": "我们在食堂吃午饭。",
+    "theme": "school"
+  },
+  {
+    "id": "dormitory",
+    "word": "dormitory",
+    "phonetic": "/ˈdɔːrmətɔːri/",
+    "pos": "n.",
+    "meaning": "宿舍",
+    "example": "He lives in the school dormitory.",
+    "exampleZh": "他住在学校宿舍。",
+    "theme": "school"
+  },
+  {
+    "id": "uniform",
+    "word": "uniform",
+    "phonetic": "/ˈjuːnɪfɔːrm/",
+    "pos": "n.",
+    "meaning": "校服；制服",
+    "example": "We wear school uniforms on Monday.",
+    "exampleZh": "我们周一穿校服。",
+    "theme": "school"
+  },
+  {
+    "id": "timetable",
+    "word": "timetable",
+    "phonetic": "/ˈtaɪmteɪbl/",
+    "pos": "n.",
+    "meaning": "课程表；时间表",
+    "example": "Check the timetable for the next class.",
+    "exampleZh": "查一下课程表看下节是什么课。",
+    "theme": "school"
+  },
+  {
+    "id": "term",
+    "word": "term",
+    "phonetic": "/tɜːrm/",
+    "pos": "n.",
+    "meaning": "学期；术语",
+    "example": "There are two terms in a school year.",
+    "exampleZh": "一学年有两个学期。",
+    "theme": "school"
+  },
+  {
+    "id": "semester",
+    "word": "semester",
+    "phonetic": "/sɪˈmestər/",
+    "pos": "n.",
+    "meaning": "学期（半学年）",
+    "example": "The new semester begins in September.",
+    "exampleZh": "新学期九月开始。",
+    "theme": "school"
+  },
+  {
+    "id": "holiday",
+    "word": "holiday",
+    "phonetic": "/ˈhɑːlədeɪ/",
+    "pos": "n.",
+    "meaning": "假期；节日",
+    "example": "The summer holiday is coming.",
+    "exampleZh": "暑假就要到了。",
+    "theme": "school"
+  },
+  {
+    "id": "vacation",
+    "word": "vacation",
+    "phonetic": "/veɪˈkeɪʃn/",
+    "pos": "n.",
+    "meaning": "假期；休假",
+    "example": "Where will you go for the winter vacation?",
+    "exampleZh": "寒假你要去哪里？",
+    "theme": "school"
+  },
+  {
+    "id": "weekend",
+    "word": "weekend",
+    "phonetic": "/ˈwiːkend/",
+    "pos": "n.",
+    "meaning": "周末",
+    "example": "I play football at the weekend.",
+    "exampleZh": "我周末踢足球。",
+    "theme": "school"
+  },
+  {
+    "id": "begin",
+    "word": "begin",
+    "phonetic": "/bɪˈɡɪn/",
+    "pos": "v.",
+    "meaning": "开始",
+    "example": "Class begins at eight o'clock.",
+    "exampleZh": "八点开始上课。",
+    "theme": "school"
+  },
+  {
+    "id": "finish",
+    "word": "finish",
+    "phonetic": "/ˈfɪnɪʃ/",
+    "pos": "v.",
+    "meaning": "完成；结束",
+    "example": "I have finished my homework.",
+    "exampleZh": "我已经完成了作业。",
+    "theme": "school"
+  },
+  {
+    "id": "pass",
+    "word": "pass",
+    "phonetic": "/pæs/",
+    "pos": "v.",
+    "meaning": "通过（考试）；传递",
+    "example": "She passed the exam easily.",
+    "exampleZh": "她轻松通过了考试。",
+    "theme": "school"
+  },
+  {
+    "id": "fail",
+    "word": "fail",
+    "phonetic": "/feɪl/",
+    "pos": "v.",
+    "meaning": "不及格；失败",
+    "example": "Do not worry if you fail once.",
+    "exampleZh": "失败一次不要担心。",
+    "theme": "school"
+  },
+  {
+    "id": "review",
+    "word": "review",
+    "phonetic": "/rɪˈvjuː/",
+    "pos": "v./n.",
+    "meaning": "复习；回顾",
+    "example": "Review the lessons before the exam.",
+    "exampleZh": "考试前复习功课。",
+    "theme": "school"
+  },
+  {
+    "id": "practice",
+    "word": "practice",
+    "phonetic": "/ˈpræktɪs/",
+    "pos": "n./v.",
+    "meaning": "练习；实践",
+    "example": "Practice makes perfect.",
+    "exampleZh": "熟能生巧。",
+    "theme": "school"
+  },
+  {
+    "id": "prepare",
+    "word": "prepare",
+    "phonetic": "/prɪˈper/",
+    "pos": "v.",
+    "meaning": "准备",
+    "example": "We are preparing for the test.",
+    "exampleZh": "我们正在为测验做准备。",
+    "theme": "school"
+  },
+  {
+    "id": "discuss",
+    "word": "discuss",
+    "phonetic": "/dɪˈskʌs/",
+    "pos": "v.",
+    "meaning": "讨论",
+    "example": "Let us discuss this question in groups.",
+    "exampleZh": "我们分组讨论这个问题吧。",
+    "theme": "school"
+  },
+  {
+    "id": "explain",
+    "word": "explain",
+    "phonetic": "/ɪkˈspleɪn/",
+    "pos": "v.",
+    "meaning": "解释；说明",
+    "example": "The teacher explained the grammar again.",
+    "exampleZh": "老师又讲解了一遍语法。",
+    "theme": "school"
+  },
+  {
+    "id": "describe",
+    "word": "describe",
+    "phonetic": "/dɪˈskraɪb/",
+    "pos": "v.",
+    "meaning": "描述；描写",
+    "example": "Describe your best friend in English.",
+    "exampleZh": "用英语描述你最好的朋友。",
+    "theme": "school"
+  },
+  {
+    "id": "translate",
+    "word": "translate",
+    "phonetic": "/trænsˈleɪt/",
+    "pos": "v.",
+    "meaning": "翻译",
+    "example": "Translate this sentence into Chinese.",
+    "exampleZh": "把这个句子翻译成中文。",
+    "theme": "school"
+  },
+  {
+    "id": "repeat",
+    "word": "repeat",
+    "phonetic": "/rɪˈpiːt/",
+    "pos": "v.",
+    "meaning": "重复；跟读",
+    "example": "Repeat after me, please.",
+    "exampleZh": "请跟我读。",
+    "theme": "school"
+  },
+  {
+    "id": "copy",
+    "word": "copy",
+    "phonetic": "/ˈkɑːpi/",
+    "pos": "v./n.",
+    "meaning": "抄写；复制；副本",
+    "example": "Copy the new words twice.",
+    "exampleZh": "把生词抄两遍。",
+    "theme": "school"
+  },
+  {
+    "id": "check",
+    "word": "check",
+    "phonetic": "/tʃek/",
+    "pos": "v./n.",
+    "meaning": "检查；核对",
+    "example": "Check your answers carefully.",
+    "exampleZh": "仔细检查你的答案。",
+    "theme": "school"
+  },
+  {
+    "id": "correct",
+    "word": "correct",
+    "phonetic": "/kəˈrekt/",
+    "pos": "adj./v.",
+    "meaning": "正确的；改正",
+    "example": "Your answer is correct.",
+    "exampleZh": "你的答案是正确的。",
+    "theme": "school"
+  },
+  {
+    "id": "wrong",
+    "word": "wrong",
+    "phonetic": "/rɔːŋ/",
+    "pos": "adj.",
+    "meaning": "错误的",
+    "example": "This answer is wrong.",
+    "exampleZh": "这个答案是错的。",
+    "theme": "school"
+  },
+  {
+    "id": "difficult",
+    "word": "difficult",
+    "phonetic": "/ˈdɪfɪkəlt/",
+    "pos": "adj.",
+    "meaning": "困难的",
+    "example": "This question is too difficult.",
+    "exampleZh": "这道题太难了。",
+    "theme": "school"
+  },
+  {
+    "id": "easy",
+    "word": "easy",
+    "phonetic": "/ˈiːzi/",
+    "pos": "adj.",
+    "meaning": "容易的",
+    "example": "English is easy for me.",
+    "exampleZh": "英语对我来说很容易。",
+    "theme": "school"
+  },
+  {
+    "id": "clever",
+    "word": "clever",
+    "phonetic": "/ˈklevər/",
+    "pos": "adj.",
+    "meaning": "聪明的",
+    "example": "She is a clever girl.",
+    "exampleZh": "她是个聪明的女孩。",
+    "theme": "school"
+  },
+  {
+    "id": "hardworking",
+    "word": "hardworking",
+    "phonetic": "/ˌhɑːrdˈwɜːrkɪŋ/",
+    "pos": "adj.",
+    "meaning": "勤奋的",
+    "example": "He is a hardworking student.",
+    "exampleZh": "他是个勤奋的学生。",
+    "theme": "school"
+  },
+  {
+    "id": "lazy",
+    "word": "lazy",
+    "phonetic": "/ˈleɪzi/",
+    "pos": "adj.",
+    "meaning": "懒惰的",
+    "example": "Do not be lazy in class.",
+    "exampleZh": "上课不要偷懒。",
+    "theme": "school"
+  },
+  {
+    "id": "careful",
+    "word": "careful",
+    "phonetic": "/ˈkerfl/",
+    "pos": "adj.",
+    "meaning": "仔细的；小心的",
+    "example": "Be careful with your spelling.",
+    "exampleZh": "注意你的拼写。",
+    "theme": "school"
+  },
+  {
+    "id": "absent",
+    "word": "absent",
+    "phonetic": "/ˈæbsənt/",
+    "pos": "adj.",
+    "meaning": "缺席的",
+    "example": "Two students are absent today.",
+    "exampleZh": "今天有两名学生缺席。",
+    "theme": "school"
+  },
+  {
+    "id": "early",
+    "word": "early",
+    "phonetic": "/ˈɜːrli/",
+    "pos": "adj./adv.",
+    "meaning": "早的；提早",
+    "example": "I get to school early.",
+    "exampleZh": "我很早到校。",
+    "theme": "school"
+  },
+  {
+    "id": "late",
+    "word": "late",
+    "phonetic": "/leɪt/",
+    "pos": "adj./adv.",
+    "meaning": "迟的；晚",
+    "example": "Do not be late for class.",
+    "exampleZh": "上课不要迟到。",
+    "theme": "school"
+  },
+  {
+    "id": "course",
+    "word": "course",
+    "phonetic": "/kɔːrs/",
+    "pos": "n.",
+    "meaning": "课程",
+    "example": "She takes an art course.",
+    "exampleZh": "她上美术课程。",
+    "theme": "school"
+  },
+  {
+    "id": "meaning",
+    "word": "meaning",
+    "phonetic": "/ˈmiːnɪŋ/",
+    "pos": "n.",
+    "meaning": "意思；含义",
+    "example": "What is the meaning of this word?",
+    "exampleZh": "这个单词是什么意思？",
+    "theme": "school"
+  },
+  {
+    "id": "sentence",
+    "word": "sentence",
+    "phonetic": "/ˈsentəns/",
+    "pos": "n.",
+    "meaning": "句子",
+    "example": "Make a sentence with the word school.",
+    "exampleZh": "用 school 这个词造句。",
+    "theme": "school"
+  }
+]
