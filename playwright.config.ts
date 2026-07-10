@@ -13,6 +13,8 @@ export default defineConfig({
     baseURL: BASE_URL,
     trace: 'retain-on-failure',
     viewport: { width: 1280, height: 800 },
+    // 单个操作的兜底超时：防止对不存在元素的查询无限等待
+    actionTimeout: 15_000,
   },
   webServer: {
     command: `npm run preview -- --port ${PORT} --strictPort`,

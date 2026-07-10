@@ -1,8 +1,10 @@
 import { create } from 'zustand'
-import { REVIEW_DAILY_CAP } from '../config/session'
+import { ttsUsable } from '../audio/tts'
+import { REVIEW_DAILY_CAP, REVIEW_SOFT_GATE } from '../config/session'
 import { LEVEL_BY_ID } from '../data/levels'
 import { WORD_DB } from '../data/words'
 import { buildLevelSession, buildReviewSession, type BuildContext } from '../engine/session/builder'
+import { computeAllowedTypes } from '../engine/session/capabilities'
 import {
   advanceTeach,
   answerQuestion,
@@ -11,13 +13,12 @@ import {
 } from '../engine/session/runner'
 import { applyResults, type SessionSummary } from '../engine/session/results'
 import { persistSave, writeSnapshotBackup } from '../storage/localStore'
-import type { QuestionType } from '../types/question'
 import type { SaveData, SettingsState } from '../types/save'
 import type { SessionState } from '../types/session'
 import { todayStamp } from '../utils/date'
 import { mulberry32, seedFromString } from '../utils/random'
 import { bootLoad } from './boot'
-import { newWordsRemainingToday } from './selectors'
+import { dueCount, newWordsRemainingToday } from './selectors'
 
 export type Screen =
   | { readonly name: 'title' }
@@ -27,9 +28,6 @@ export type Screen =
   | { readonly name: 'results' }
   | { readonly name: 'settings' }
   | { readonly name: 'recovery' }
-
-/** M1 支持的题型（M2 加入听音/拼写后扩展） */
-export const ALLOWED_TYPES: readonly QuestionType[] = ['recognition', 'reverse']
 
 export interface AppStore {
   save: SaveData
@@ -48,6 +46,8 @@ export interface AppStore {
   answerCurrent: (correct: boolean, responseMs: number) => void
   quitSession: () => void
   updateSettings: (patch: Partial<SettingsState>) => void
+  /** 花金币（余额不足返回 false，不扣款） */
+  spendCoins: (amount: number) => boolean
   replaceSave: (save: SaveData) => void
   resetSave: (save: SaveData) => void
   markBackedUp: () => void
@@ -60,7 +60,7 @@ function buildContext(save: SaveData): BuildContext {
     progress: save.wordProgress,
     today,
     rng: mulberry32(seedFromString(`${today}:${Object.keys(save.wordProgress).length}`)),
-    allowedTypes: ALLOWED_TYPES,
+    allowedTypes: computeAllowedTypes({ ttsUsable: ttsUsable(save.settings.ttsEnabled) }),
   }
 }
 
@@ -100,6 +100,12 @@ export const useAppStore = create<AppStore>()((set, get) => ({
     const level = LEVEL_BY_ID.get(levelId)
     if (!level) {
       showToast('关卡不存在')
+      return
+    }
+    // 软门槛：欠账太多时先复习，防止新词越滚越多记不牢
+    const due = dueCount(save)
+    if (due > REVIEW_SOFT_GATE) {
+      showToast(`待复习的单词已有 ${due} 个，先打复习副本清一清再开新关吧！`)
       return
     }
     const allowance = newWordsRemainingToday(save)
@@ -157,6 +163,15 @@ export const useAppStore = create<AppStore>()((set, get) => ({
   updateSettings: (patch) => {
     const { save } = get()
     set({ save: { ...save, settings: { ...save.settings, ...patch } } })
+  },
+
+  spendCoins: (amount) => {
+    const { save } = get()
+    if (amount <= 0 || save.player.coins < amount) return false
+    set({
+      save: { ...save, player: { ...save.player, coins: save.player.coins - amount } },
+    })
+    return true
   },
 
   replaceSave: (imported) => {

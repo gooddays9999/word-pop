@@ -11,3 +11,7 @@ export const LEVEL_XP_UNIT = 50
 /** 关卡星级正确率阈值 */
 export const STARS_THREE_ACCURACY = 0.95
 export const STARS_TWO_ACCURACY = 0.8
+
+/** 提示道具价格（金币） */
+export const HINT_5050_COST = 15
+export const HINT_LETTER_COST = 8

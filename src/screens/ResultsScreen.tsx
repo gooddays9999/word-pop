@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { playSfx } from '../audio/sfx'
 import { Button } from '../components/Button'
 import { WORD_DB } from '../data/words'
 import { firstSense } from '../engine/question/distractors'
@@ -14,6 +15,13 @@ export function ResultsScreen() {
   useEffect(() => {
     if (summary === null) goTo({ name: 'home' })
   }, [summary, goTo])
+
+  const sfxEnabled = useAppStore((state) => state.save.settings.sfxEnabled)
+  const levelCompleted = summary?.levelCompleted ?? false
+  useEffect(() => {
+    if (summary !== null && sfxEnabled) playSfx(levelCompleted ? 'levelup' : 'coin')
+  }, [summary, sfxEnabled, levelCompleted])
+
   if (summary === null) return null
 
   const accuracyPercent = Math.round(summary.accuracy * 100)
@@ -78,7 +86,12 @@ export function ResultsScreen() {
         )}
 
         <div className="flex justify-center gap-3">
-          <Button variant="ghost" size="md" onClick={() => goTo({ name: 'home' })} data-testid="back-home">
+          <Button
+            variant="ghost"
+            size="md"
+            onClick={() => goTo({ name: 'home' })}
+            data-testid="back-home"
+          >
             🛰️ 返回基地
           </Button>
           {due > 0 ? (

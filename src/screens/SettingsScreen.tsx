@@ -74,14 +74,26 @@ export function SettingsScreen() {
         </section>
 
         <section className="panel mb-5 p-6">
-          <h2 className="mb-4 text-lg font-extrabold">🔊 发音</h2>
-          <Button
-            variant={save.settings.ttsEnabled ? 'primary' : 'ghost'}
-            size="md"
-            onClick={() => updateSettings({ ttsEnabled: !save.settings.ttsEnabled })}
-          >
-            {save.settings.ttsEnabled ? '已开启（自动朗读单词）' : '已关闭'}
-          </Button>
+          <h2 className="mb-4 text-lg font-extrabold">🔊 声音</h2>
+          <div className="flex flex-wrap gap-3">
+            <Button
+              variant={save.settings.ttsEnabled ? 'primary' : 'ghost'}
+              size="md"
+              onClick={() => updateSettings({ ttsEnabled: !save.settings.ttsEnabled })}
+            >
+              发音朗读：{save.settings.ttsEnabled ? '开' : '关'}
+            </Button>
+            <Button
+              variant={save.settings.sfxEnabled ? 'primary' : 'ghost'}
+              size="md"
+              onClick={() => updateSettings({ sfxEnabled: !save.settings.sfxEnabled })}
+            >
+              游戏音效：{save.settings.sfxEnabled ? '开' : '关'}
+            </Button>
+          </div>
+          <p className="mt-3 text-xs text-[var(--ink-dim)]">
+            关闭发音后，听音辨词题会自动换成看词选义
+          </p>
         </section>
 
         <section className="panel mb-5 p-6">

@@ -46,7 +46,10 @@ export function Hud({ onBack }: HudProps) {
           🪙 <span style={{ fontFamily: 'var(--font-num)' }}>{coins}</span>
         </span>
         <span title="连续冒险天数">
-          🔥 <span style={{ fontFamily: 'var(--font-num)' }}>{streak.current}</span>
+          🔥{' '}
+          <span style={{ fontFamily: 'var(--font-num)' }} data-testid="streak">
+            {streak.current}
+          </span>
         </span>
         <span title="图鉴收集">
           📖{' '}

@@ -14,6 +14,7 @@ const SESSION_LABELS: Record<string, string> = {
 export function BattleScreen() {
   const session = useAppStore((state) => state.session)
   const quitSession = useAppStore((state) => state.quitSession)
+  const coins = useAppStore((state) => state.save.player.coins)
   const [confirmQuit, setConfirmQuit] = useState(false)
 
   // 战斗中误刷新/关页会丢弃本场成果，弹浏览器原生确认
@@ -37,6 +38,14 @@ export function BattleScreen() {
         </div>
         <span className="text-xs text-[var(--ink-dim)]" style={{ fontFamily: 'var(--font-num)' }}>
           {session.cursor}/{session.items.length}
+        </span>
+        <span
+          className="text-xs font-extrabold text-[var(--star-gold)]"
+          style={{ fontFamily: 'var(--font-num)' }}
+          data-testid="battle-coins"
+          title="金币（可购买提示）"
+        >
+          🪙{coins}
         </span>
         <button
           className="btn btn-ghost btn-sm"
